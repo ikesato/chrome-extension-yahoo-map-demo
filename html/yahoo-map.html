@@ -1,0 +1,20 @@
+<html>
+  <style>
+    body {
+      margin: 0px;
+    }
+  </style>
+  <body>
+    <div id="map" style="width:300px; height:260px"></div>
+    <script type="text/javascript" charset="utf-8"
+      src="http://js.api.olp.yahooapis.jp/OpenLocalPlatform/V1/jsapi?appid=YOUR_API_ID"></script>
+    <script type="text/javascript">
+      window.onload = function() {
+        var ymap = new Y.Map("map", {configure : {weatherOverlay: true}});
+        ymap.addControl(new Y.SliderZoomControlVertical());
+        ymap.addControl(new Y.LayerSetControl());
+        ymap.drawMap(new Y.LatLng(39.0275, 137.4611), 5, Y.LayerSetId.NORMAL);
+      }
+    </script>
+  </body>
+</html>
